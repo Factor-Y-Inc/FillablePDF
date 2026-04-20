@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import copy
 import tkinter as tk
+import webbrowser
 from tkinter import filedialog, messagebox
 
 import customtkinter as ctk
@@ -62,6 +63,7 @@ class AppWindow(ctk.CTk):
         toolbar = ctk.CTkFrame(self, height=50, corner_radius=0)
         toolbar.grid(row=0, column=0, columnspan=2, sticky="ew")
         toolbar.grid_columnconfigure(5, weight=1)  # spacer
+        toolbar.grid_columnconfigure(6, weight=0)
 
         self._btn_open = ctk.CTkButton(
             toolbar, text="Open PDF", width=110, command=self._open_pdf
@@ -98,6 +100,12 @@ class AppWindow(ctk.CTk):
             command=self._next_page
         )
         self._btn_next.grid(row=0, column=2, padx=2)
+
+        self._btn_help = ctk.CTkButton(
+            toolbar, text="About", width=70,
+            command=self._open_readme,
+        )
+        self._btn_help.grid(row=0, column=6, padx=(4, 10), pady=8)
 
         # ── Main area ─────────────────────────────────────────────────
         self._canvas = PDFCanvas(self)
@@ -140,6 +148,9 @@ class AppWindow(ctk.CTk):
     # ------------------------------------------------------------------
     # Toolbar actions
     # ------------------------------------------------------------------
+
+    def _open_readme(self) -> None:
+        webbrowser.open("https://github.com/Factor-Y-Inc/FillablePDF#readme")
 
     def _open_pdf(self) -> None:
         path = filedialog.askopenfilename(
