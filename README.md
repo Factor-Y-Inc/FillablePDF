@@ -44,20 +44,41 @@ pip install -r requirements.txt
 python main.py
 ```
 
-## Usage
+## Quick User Manual
 
-1. Click **Open PDF** in the toolbar to load a PDF file.
-2. Click **Auto-Detect Fields** to scan the current page for blank form fields.
-3. Select a field type from the sidebar (**Text Field**, **Checkbox**, **Radio Button**, **Dropdown**) and drag on the canvas to draw a new field.
-4. Switch to **Select / Move** mode to:
-   - Click a field to select it.
-   - Drag the field body to reposition it.
-   - Drag a red handle (corners or edge midpoints) to resize it.
-   - Right-click a field to delete it.
-5. Use the **Properties** panel (bottom of sidebar) to rename a field or set its default value, then click **Apply**.
-6. Use **Copy Field** or `Ctrl+C` to copy the selected field, then `Ctrl+V` to paste.
-7. Navigate pages with the **◀ / ▶** buttons in the toolbar.
-8. Click **Save Fillable PDF** to export the finished document.
+### 1 — Open a PDF
+Click **Open PDF** in the toolbar and choose any PDF file. The first page renders immediately; use the **◀ / ▶** navigation buttons to move between pages.
+
+### 2 — Auto-Detect Fields
+Click **Auto-Detect Fields** to scan the current page. The app finds underscores, horizontal lines, and empty boxes and converts them into text fields automatically. Detected fields appear as blue overlays on the canvas.
+
+### 3 — Add Fields Manually
+Pick a field type from the sidebar:
+
+| Button | Field type |
+|---|---|
+| Text Field | Single-line text input |
+| Checkbox | Boolean tick box |
+| Radio Button | Single-selection button |
+| Dropdown | Combo-box with selectable options |
+
+Then **click and drag** on the canvas to draw the field at the size and position you want.
+
+### 4 — Select, Move & Resize
+Switch to **Select / Move** mode (top of sidebar). Then:
+- **Click** a field to select it (turns red).
+- **Drag the body** to reposition it.
+- **Drag a handle** (corners or edge midpoints) to resize it.
+- **Right-click** a field to delete it.
+
+### 5 — Edit Field Properties
+With a field selected, the **Properties** panel at the bottom of the sidebar shows its name and default value. Edit either, then click **Apply**.
+
+### 6 — Copy & Paste
+Select a field and press `Ctrl+C` (or click **Copy Field** in the sidebar), then `Ctrl+V` to paste. Each paste offsets the copy by 10 pt so fields don't stack.
+
+### 7 — Save
+Click **Save Fillable PDF** in the toolbar. Choose a destination and the app writes a standard AcroForm PDF that opens in Acrobat, browsers, and any compliant viewer.
 
 ## Project Structure
 
